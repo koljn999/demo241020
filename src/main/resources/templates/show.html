@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3 class="center">Your Book</h3>
+
+<table class="centered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${book.name}"/>
+        <td th:text="${book.author}"/>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

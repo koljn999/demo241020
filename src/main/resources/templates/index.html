@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+<h3>List of Books</h3>
+
+<table class="centered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+     <tbody>
+    <tr th:each="book:${books}">
+        <td th:text="${book.name}"/>
+        <td th:text="${book.author}"/>
+        <td><a  th:href="@{'/'+${book.id}+'/show'}">show</a></td>
+        <td><a  th:href="@{'/'+${book.id}+'/edit'}">edit</a></td>
+        <td><a  th:href="@{'/'+${book.id}+'/delete'}">delete</a></td>
+    </tr>
+     </tbody>
+</table>
+<div class="container center">
+<form action="#" th:action="@{/}" th:object="${newbook}" method="post">
+    <p>Author: <input type="text" th:field="*{author}"/> </p>
+    <p>Name: <input type="text" th:field="*{name}"/></p>
+    <p><input type="submit" value="create new book"><input type="reset" value="Reset"/> </p>
+</form>
+</div>
+</body>
+</html>
